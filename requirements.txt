@@ -1,0 +1,2 @@
+protobuf==5.26.1
+pycryptodome==3.19.0
