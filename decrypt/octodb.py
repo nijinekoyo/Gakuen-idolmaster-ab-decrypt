@@ -1,7 +1,7 @@
 '''
 Author: nijineko
 Date: 2024-05-23 16:38:53
-LastEditTime: 2024-05-23 17:01:25
+LastEditTime: 2024-05-23 18:14:04
 LastEditors: nijineko
 Description: octodb解密
 FilePath: \Gakuen-idolmaster-ab-decrypt\decrypt\octoDB.py
@@ -18,7 +18,7 @@ IV = "LvAUtf+tnz"
 
 def octodbDecrypt(filepath: str) -> decrypt.octodb_pb2.Database:
     """ 解密OctoDB
-    
+
     :param filepath: 加密文件路径
     :return: 解密后的 protobuf 对象
     """
