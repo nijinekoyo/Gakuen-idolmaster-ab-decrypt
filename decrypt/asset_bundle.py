@@ -91,7 +91,6 @@ def assetBundleDecryptToFile(filesPath: str, outputPath: str, octodb: decrypt.oc
 
             # 检查文件是否存在于nameMap中
             if fileName in nameMap:
-                print(f"Decrypting {fileName}...")
                 with open(filePath, "rb") as f:
                     encryptedABFileBytes = f.read()
 

@@ -6,7 +6,7 @@
 ``` shell
 pip install -r requirements.txt
 ```
-2. 以安卓系统为例，将游戏文件`/data/data/com.bandainamcoent.idolmaster_gakuen/files/Octo`拷贝到项目目录下，**注意：此步需要设备具有Root权限**
+2. 以安卓系统为例，将游戏文件`/data/data/com.bandainamcoent.idolmaster_gakuen/files/octo`拷贝到项目目录下，**注意：此步需要设备具有Root权限**
 3. 执行脚本，等待解密完成
 ``` shell
 python ./main.py

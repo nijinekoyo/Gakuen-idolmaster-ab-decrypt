@@ -11,10 +11,10 @@ from decrypt.asset_bundle import assetBundleDecryptToFile
 
 
 def main():
-    octodb = octodbDecrypt("./Octo/pdb/400/205000/octocacheevai")
+    octodb = octodbDecrypt("./octo/pdb/400/205000/octocacheevai")
 
     # 解密AssetBundle
-    assetBundleDecryptToFile("./Octo/v1/400", "./output", octodb)
+    assetBundleDecryptToFile("./octo/v1/400", "./output", octodb)
 
 
 if __name__ == '__main__':

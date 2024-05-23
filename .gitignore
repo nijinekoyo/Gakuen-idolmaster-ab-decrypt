@@ -4,5 +4,5 @@ build/
 
 *.spec
 
-Octo/
+octo/
 output/
