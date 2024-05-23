@@ -1,7 +1,7 @@
 '''
 Author: nijineko
 Date: 2024-05-23 17:04:07
-LastEditTime: 2024-05-23 18:21:58
+LastEditTime: 2024-05-23 20:52:22
 LastEditors: nijineko
 Description: AssetBundle解密
 FilePath: \Gakuen-idolmaster-ab-decrypt\decrypt\asset_bundle.py
@@ -69,6 +69,12 @@ def assetBundleDecrypt(input: bytes, maskString: str, offset: int = 0, streamPos
 
 
 def assetBundleDecryptToFile(filesPath: str, outputPath: str, octodb: decrypt.octodb_pb2.Database):
+    """ 解密 AssetBundle文件
+    :param filesPath: octo文件夹路径
+    :param outputPath: 输出路径
+    :param octodb: OctoDB 清单数据
+    """
+
     assetList: list = octodb.assetBundleList
 
     nameMap = {
@@ -107,8 +113,8 @@ def assetBundleDecryptToFile(filesPath: str, outputPath: str, octodb: decrypt.oc
                             # 解密成功，写入文件
                             with open(outputFilePath, "wb") as outputFile:
                                 outputFile.write(decryptedABFileBytes)
+
+                            print(f"Decrypted {fileName}")
                         else:
                             print(f"Failed to decrypt {fileName}")
                             raise Exception(f"Failed to decrypt {fileName}")
-            else:
-                print(f"Skipping {fileName}")
