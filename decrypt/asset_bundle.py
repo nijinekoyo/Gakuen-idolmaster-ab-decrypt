@@ -93,10 +93,10 @@ def assetBundleDecryptToFile(filesPath: str, outputPath: str, octodb: decrypt.oc
     for dirPath, _, fileNames in os.walk(filesPath):
         for fileName in fileNames:
             filePath = os.path.join(dirPath, fileName)
-            outputFilePath = os.path.join(outputPath, fileName)
-
             # 检查文件是否存在于nameMap中
             if fileName in nameMap:
+                outputFilePath = os.path.join(outputPath, nameMap[fileName])
+
                 with open(filePath, "rb") as f:
                     encryptedABFileBytes = f.read()
 
