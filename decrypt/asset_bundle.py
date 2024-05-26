@@ -1,7 +1,7 @@
 '''
 Author: nijineko
 Date: 2024-05-23 17:04:07
-LastEditTime: 2024-05-23 20:52:22
+LastEditTime: 2024-05-26 16:31:23
 LastEditors: nijineko
 Description: AssetBundle解密
 FilePath: \Gakuen-idolmaster-ab-decrypt\decrypt\asset_bundle.py
@@ -46,7 +46,7 @@ def stringToMaskBytes(maskString: str, maskStringLength: int, bytesLength: int) 
     return bytes(maskBytes)
 
 
-def assetBundleDecrypt(input: bytes, maskString: str, offset: int = 0, streamPos: int = 0, headerLength: int = 256) -> bytes:
+def decryptAssetBundle(input: bytes, maskString: str, offset: int = 0, streamPos: int = 0, headerLength: int = 256) -> bytes:
     """ 解密 AssetBundle文件
     :param input: 加密文件
     :param maskString: 解密密钥
@@ -68,7 +68,7 @@ def assetBundleDecrypt(input: bytes, maskString: str, offset: int = 0, streamPos
     return bytes(buffer)
 
 
-def assetBundleDecryptToFile(filesPath: str, outputPath: str, octodb: decrypt.octodb_pb2.Database):
+def decryptToFile(filesPath: str, outputPath: str, octodb: decrypt.octodb_pb2.Database):
     """ 解密 AssetBundle文件
     :param filesPath: octo文件夹路径
     :param outputPath: 输出路径
@@ -107,7 +107,7 @@ def assetBundleDecryptToFile(filesPath: str, outputPath: str, octodb: decrypt.oc
                             outputFile.write(encryptedABFileBytes)
                     else:
                         # 解密文件
-                        decryptedABFileBytes = assetBundleDecrypt(
+                        decryptedABFileBytes = decryptAssetBundle(
                             encryptedABFileBytes, nameMap[fileName])
                         if decryptedABFileBytes.__len__() > 0 and decryptedABFileBytes[0:5] == unityFileHead:
                             # 解密成功，写入文件

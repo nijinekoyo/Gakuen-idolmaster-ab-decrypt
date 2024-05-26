@@ -1,7 +1,7 @@
 '''
 Author: nijineko
 Date: 2024-05-23 20:47:38
-LastEditTime: 2024-05-23 21:10:14
+LastEditTime: 2024-05-26 16:33:38
 LastEditors: nijineko
 Description: 资源文件导出
 FilePath: \Gakuen-idolmaster-ab-decrypt\resource\export.py
@@ -25,7 +25,7 @@ def exportFiles(filesPath: str, outputPath: str, octodb: decrypt.octodb_pb2.Data
         for value in resourceList
     }
 
-    # 遍历所有的AssetBundle文件路径
+    # 遍历所有的resourceList文件路径
     for dirPath, _, fileNames in os.walk(filesPath):
         for fileName in fileNames:
             # 检查文件是否存在于nameMap中

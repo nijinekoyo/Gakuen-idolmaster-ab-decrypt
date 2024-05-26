@@ -1,10 +1,10 @@
 '''
 Author: nijineko
 Date: 2024-05-23 16:38:53
-LastEditTime: 2024-05-23 18:14:04
+LastEditTime: 2024-05-26 16:29:57
 LastEditors: nijineko
 Description: octodb解密
-FilePath: \Gakuen-idolmaster-ab-decrypt\decrypt\octoDB.py
+FilePath: \Gakuen-idolmaster-ab-decrypt\decrypt\octodb.py
 '''
 import hashlib
 from Crypto.Cipher import AES
@@ -16,7 +16,7 @@ KEY = "1nuv9td1bw1udefk"
 IV = "LvAUtf+tnz"
 
 
-def octodbDecrypt(filepath: str) -> decrypt.octodb_pb2.Database:
+def decryptOctoDB(filepath: str) -> decrypt.octodb_pb2.Database:
     """ 解密OctoDB
 
     :param filepath: 加密文件路径
