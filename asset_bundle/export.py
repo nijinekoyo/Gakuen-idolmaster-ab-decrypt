@@ -11,6 +11,7 @@ import os
 import UnityPy
 from UnityPy.files.ObjectReader import ObjectReader
 import UnityPy.classes
+import asset_bundle.image
 
 exportTypes = [
     'Sprite',
@@ -91,7 +92,10 @@ def exportObject(object: ObjectReader, outputPath: str):
             exportFilePath += ".png"
             # 检查是否有图片数据
             if not os.path.exists(exportFilePath) and fileData.m_Width:
-                fileData.image.save(exportFilePath)
+                imageData = fileData.image
+                # 调整部分图片大小
+                imageData = asset_bundle.image.resizeByFileName(fileName, imageData)
+                imageData.save(exportFilePath)
         case 'TextAsset':
             # 检查是否存在后缀
             if not os.path.splitext(exportFilePath)[1]:
@@ -139,7 +143,7 @@ def exportObject(object: ObjectReader, outputPath: str):
                     os.makedirs(os.path.dirname(exportFilePath))
 
             exportFilePath += ".obj"
-            
+
             fileBuf = fileData.export()
             # 如果遇到bool类型则跳过
             if isinstance(fileBuf, bool):
