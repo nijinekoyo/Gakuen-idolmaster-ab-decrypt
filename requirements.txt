@@ -1,2 +1,3 @@
-protobuf==5.26.1
+protobuf==5.27.0
 pycryptodome==3.19.0
+UnityPy==1.10.13

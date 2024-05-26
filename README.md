@@ -2,6 +2,8 @@
 学园偶像大师(学園アイドルマスター) AssetBundle 文件解密工具
 
 ## Use
+需要`Python >= 3.10.0`
+
 1. 安装依赖
 ``` shell
 pip install -r requirements.txt
@@ -11,7 +13,13 @@ pip install -r requirements.txt
 ``` shell
 python ./main.py
 ```
-4. 使用其他工具解开AssetBundle打包即可获得游戏文件
+
+## Tool script
+1. export_asset_bundle.py  
+用于导出AssetBundle内的文件资产，完成文件解密后执行脚本即可
+``` shell
+python ./export_asset_bundle.py
+```
 
 ## Unity Version
 游戏AssetBundle包内的Unity Version被去掉了，需要人工补齐版本号，目前游戏使用的Unity版本号为`2022.3.21f1`
